@@ -1,0 +1,112 @@
+@prefix : <http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix health-ontology: <http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#> .
+@prefix personal-data-ontology: <http://www.semanticweb.org/administrator/ontologies/2022/10/personal-data-ontology#> .
+@base <http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology> .
+
+<http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology> rdf:type owl:Ontology ;
+                                                                               owl:imports <http://www.semanticweb.org/administrator/ontologies/2022/10/personal-data-ontology> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-Hospital_InjuryDetails
+health-ontology:mop-Hospital_InjuryDetails rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf health-ontology:mop-InjuryDetails_Hospital ;
+                                           rdfs:domain health-ontology:mc-Hospital ;
+                                           rdfs:range health-ontology:mc-InjuryDetails .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-InjuryDetails_Hospital
+health-ontology:mop-InjuryDetails_Hospital rdf:type owl:ObjectProperty ;
+                                           rdfs:domain health-ontology:mc-InjuryDetails ;
+                                           rdfs:range health-ontology:mc-Hospital .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-InjuryDetails_Injury
+health-ontology:mop-InjuryDetails_Injury rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf health-ontology:mop-Injury_InjuryDetails ;
+                                         rdfs:domain health-ontology:mc-InjuryDetails ;
+                                         rdfs:range health-ontology:mc-Injury .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-InjuryDetails_Patient
+health-ontology:mop-InjuryDetails_Patient rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf health-ontology:mop-Patient_InjuryDetails ;
+                                          rdfs:domain health-ontology:mc-InjuryDetails ;
+                                          rdfs:range health-ontology:mc-Patient .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-Injury_InjuryDetails
+health-ontology:mop-Injury_InjuryDetails rdf:type owl:ObjectProperty ;
+                                         rdfs:domain health-ontology:mc-Injury ;
+                                         rdfs:range health-ontology:mc-InjuryDetails .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mop-Patient_InjuryDetails
+health-ontology:mop-Patient_InjuryDetails rdf:type owl:ObjectProperty ;
+                                          rdfs:domain health-ontology:mc-Patient ;
+                                          rdfs:range health-ontology:mc-InjuryDetails .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mdp-HospitalAddress
+health-ontology:mdp-HospitalAddress rdf:type owl:DatatypeProperty ;
+                                    rdfs:domain health-ontology:mc-Hospital ;
+                                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mdp-HospitalName
+health-ontology:mdp-HospitalName rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain health-ontology:mc-Hospital ;
+                                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mdp-InjuryDate
+health-ontology:mdp-InjuryDate rdf:type owl:DatatypeProperty ;
+                               rdfs:domain health-ontology:mc-InjuryDetails ;
+                               rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mdp-InjuryName
+health-ontology:mdp-InjuryName rdf:type owl:DatatypeProperty ;
+                               rdfs:domain health-ontology:mc-Injury ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mdp-InjuryPercentage
+health-ontology:mdp-InjuryPercentage rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain health-ontology:mc-InjuryDetails ;
+                                     rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mc-Hospital
+health-ontology:mc-Hospital rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mc-Injury
+health-ontology:mc-Injury rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mc-InjuryDetails
+health-ontology:mc-InjuryDetails rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2022/10/health-ontology#mc-Patient
+health-ontology:mc-Patient rdf:type owl:Class ;
+                           rdfs:subClassOf personal-data-ontology:mc-PersonProfile .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
