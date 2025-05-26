@@ -1,0 +1,159 @@
+@prefix : <http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-mini-2023#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rbac-full-work: <http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#> .
+@base <http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work> .
+
+<http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work> rdf:type owl:Ontology .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#appMethods
+rbac-full-work:appMethods rdf:type owl:ObjectProperty ;
+                          rdfs:domain rbac-full-work:Application ;
+                          rdfs:range rbac-full-work:Method .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#appRoles
+rbac-full-work:appRoles rdf:type owl:ObjectProperty ;
+                        rdfs:domain rbac-full-work:Application ;
+                        rdfs:range rbac-full-work:Role .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#call
+rbac-full-work:call rdf:type owl:ObjectProperty ;
+                    rdfs:domain rbac-full-work:Role ;
+                    rdfs:range rbac-full-work:Method .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#credentialHasUser
+rbac-full-work:credentialHasUser rdf:type owl:ObjectProperty ;
+                                 rdfs:domain rbac-full-work:Credential ;
+                                 rdfs:range rbac-full-work:User .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#hasCredential
+rbac-full-work:hasCredential rdf:type owl:ObjectProperty ;
+                             rdfs:domain rbac-full-work:User ;
+                             rdfs:range rbac-full-work:Credential .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#hasRole
+rbac-full-work:hasRole rdf:type owl:ObjectProperty ;
+                       rdfs:domain rbac-full-work:User ;
+                       rdfs:range rbac-full-work:Role .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#hasUser
+rbac-full-work:hasUser rdf:type owl:ObjectProperty ;
+                       rdfs:domain rbac-full-work:Role ;
+                       rdfs:range rbac-full-work:User .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#methodApp
+rbac-full-work:methodApp rdf:type owl:ObjectProperty ;
+                         rdfs:domain rbac-full-work:Method ;
+                         rdfs:range rbac-full-work:Application .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#methodRoles
+rbac-full-work:methodRoles rdf:type owl:ObjectProperty ;
+                           rdfs:domain rbac-full-work:Method ;
+                           rdfs:range rbac-full-work:Role .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#roleApp
+rbac-full-work:roleApp rdf:type owl:ObjectProperty ;
+                       rdfs:domain rbac-full-work:Role ;
+                       rdfs:range rbac-full-work:Application .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#applicationName
+rbac-full-work:applicationName rdf:type owl:DatatypeProperty ;
+                               rdfs:domain rbac-full-work:Application ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#applicationNameAr
+rbac-full-work:applicationNameAr rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain rbac-full-work:Application ;
+                                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#isSystemAdmin
+rbac-full-work:isSystemAdmin rdf:type owl:DatatypeProperty ;
+                             rdfs:domain rbac-full-work:Role ;
+                             rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#methodSignature
+rbac-full-work:methodSignature rdf:type owl:DatatypeProperty ;
+                               rdfs:domain rbac-full-work:Method ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#passWord
+rbac-full-work:passWord rdf:type owl:DatatypeProperty ;
+                        rdfs:domain rbac-full-work:Credential ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#roleName
+rbac-full-work:roleName rdf:type owl:DatatypeProperty ;
+                        rdfs:domain rbac-full-work:Role ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#roleNameAr
+rbac-full-work:roleNameAr rdf:type owl:DatatypeProperty ;
+                          rdfs:domain rbac-full-work:Role ;
+                          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#userDisplayName
+rbac-full-work:userDisplayName rdf:type owl:DatatypeProperty ;
+                               rdfs:domain rbac-full-work:User ;
+                               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#userName
+rbac-full-work:userName rdf:type owl:DatatypeProperty ;
+                        rdfs:domain rbac-full-work:Credential ;
+                        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#Application
+rbac-full-work:Application rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#Credential
+rbac-full-work:Credential rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#Method
+rbac-full-work:Method rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#Role
+rbac-full-work:Role rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/administrator/ontologies/2023/0/rbac-full-work#User
+rbac-full-work:User rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
